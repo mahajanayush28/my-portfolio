@@ -142,7 +142,7 @@
   .form .hint{font-size:12px;color:var(--ink-faint);margin-top:12px;text-align:center;}
 
   /* FLOATING WHATSAPP */
-  .wa-float{position:fixed;right:22px;bottom:22px;z-index:60;width:58px;height:58px;border-radius:50%;background:var(--green);color:#06210f;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.7);transition:.2s;}
+   .wa-float{position:fixed;right:22px;bottom:22px;z-index:60;width:58px;height:58px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.7);transition:.2s;}
   .wa-float:hover{transform:scale(1.08);}
   .wa-float svg{width:30px;height:30px;fill:currentColor;stroke:none;}
 
@@ -230,7 +230,7 @@
           <img src="photo.png" alt="Ayush Mahajan">
         </div>
         <div class="stats">
-          <div class="stat"><div class="num">4+</div><div class="lbl">Years of experience</div></div>
+		  <div class="stat"><div class="num">4+</div><div class="lbl">Years of experience</div></div>
           <div class="stat"><div class="num">3</div><div class="lbl">Companies</div></div>
           <div class="stat"><div class="num">E2E</div><div class="lbl">Playwright</div></div>
         </div>
@@ -305,7 +305,7 @@
         <div class="job">
           <div class="job-head">
             <div><h3>Software Engineer</h3><div class="co">Meron</div></div>
-            <div class="date">Apr 2025 - Present · Remote</div>
+            <div class="date">Apr 2025 - Present &middot; Remote</div>
           </div>
           <ul>
             <li>Developed scalable front-end applications using React.js, Redux and modular architecture principles.</li>
@@ -320,7 +320,7 @@
         <div class="job">
           <div class="job-head">
             <div><h3>Software Engineer</h3><div class="co">Vector Flow</div></div>
-            <div class="date">Jan 2023 - Mar 2025 · Remote</div>
+            <div class="date">Jan 2023 - Mar 2025 &middot; Remote</div>
           </div>
           <ul>
             <li>Developed high-performance web applications using React.js and Redux with reusable component libraries.</li>
@@ -334,7 +334,7 @@
         <div class="job">
           <div class="job-head">
             <div><h3>Software Engineer</h3><div class="co">Techno Start</div></div>
-            <div class="date">Sep 2020 - Oct 2021 · Pune, India</div>
+            <div class="date">Sep 2020 - Oct 2021 &middot; Pune, India</div>
           </div>
           <ul>
             <li>Designed and implemented application features based on business requirements and user needs.</li>
@@ -354,46 +354,25 @@
       <h2 class="title">Selected Work</h2>
       <div class="project-grid">
 
-        <div class="project">
-          <div class="project-top"><div class="project-icon">EX</div><span class="tag wip">In Progress</span></div>
-          <h3>ExpenseTracker</h3>
+        <a class="project" href="https://github.com/mahajanayush28/fintrack" target="_blank" rel="noopener">
+          <div class="project-top"><div class="project-icon">EXT</div><span class="tag wip">In Progress</span></div>
+          <h3>Expense Tracker</h3>
           <p>Personal finance management app to track income and expenses, manage categories and budgets, and review financial activity, with an AI Assistant for smarter insights.</p>
           <div class="stack">React.js · Next.js · Node.js · Express.js · PostgreSQL · Material UI</div>
-        </div>
+        </a>
 
-        <div class="project">
-          <div class="project-top"><div class="project-icon">HM</div><span class="tag">PG-DAC Final</span></div>
+        <a class="project" href="https://github.com/mahajanayush28/cdac-project" target="_blank" rel="noopener">
+          <div class="project-top"><div class="project-icon">HMS</div><span class="tag">PG-DAC Final</span></div>
           <h3>Hospital Management System</h3>
           <p>Streamlines healthcare administration: patient records, appointments, billing, inventory and pharmacy, with role-based access control and reporting modules.</p>
           <div class="stack">MongoDB · Express.js · React.js · Node.js</div>
-        </div>
-
+        </a>
+		
         <div class="project">
-          <div class="project-top"><div class="project-icon">DF</div><span class="tag">Sample</span></div>
+          <div class="project-top"><div class="project-icon">DFB</div><span class="tag"></span></div>
           <h3>Dynamic Form Builder</h3>
           <p>Drag-and-drop form builder that generates configurable forms from JSON schemas, with validation and reusable field components.</p>
           <div class="stack">React.js · Redux · Material UI</div>
-        </div>
-
-        <div class="project">
-          <div class="project-top"><div class="project-icon">AD</div><span class="tag">Sample</span></div>
-          <h3>Analytics Dashboard</h3>
-          <p>Responsive admin dashboard with interactive charts, filters and role-based views, consuming REST APIs for real-time data.</p>
-          <div class="stack">Next.js · Node.js · PostgreSQL</div>
-        </div>
-
-        <div class="project">
-          <div class="project-top"><div class="project-icon">MT</div><span class="tag">Sample</span></div>
-          <h3>Mobile Task Manager</h3>
-          <p>Cross-platform task management app with offline-friendly lists, reminders and clean, reusable component architecture.</p>
-          <div class="stack">React Native · Redux · Node.js</div>
-        </div>
-
-        <div class="project">
-          <div class="project-top"><div class="project-icon">EC</div><span class="tag">Sample</span></div>
-          <h3>E-Commerce Storefront</h3>
-          <p>Responsive online store with product listing, cart, authentication and Playwright end-to-end tests for checkout flows.</p>
-          <div class="stack">React.js · Express.js · MongoDB · Playwright</div>
         </div>
 
       </div>
@@ -429,7 +408,7 @@
         <h2>Have a project in mind? Let's build it together.</h2>
         <p>Reach out by email or WhatsApp. Fill in the form and your message will open in Gmail or WhatsApp, ready to send.</p>
 
-        <a class="contact-item" href="https://mail.google.com/mail/?view=cm&fs=1&to=mahajanayush321@gmail.com" target="_blank" rel="noopener">
+        <a class="contact-item" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mahajanayush321@gmail.com" target="_blank" rel="noopener">
           <div class="ci-icon"><svg class="i"><use href="#i-mail"/></svg></div>
           <div><small>Email (opens Gmail)</small><span>mahajanayush321@gmail.com</span></div>
         </a>
@@ -502,7 +481,7 @@
 
 <footer>
   <div class="socials">
-    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mahajanayush321@gmail.com" target="_blank" rel="noopener">Email</a>
+    <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mahajanayush321@gmail.com" target="_blank" rel="noopener">Email</a>
     <a href="https://wa.me/919039898453" target="_blank" rel="noopener">WhatsApp</a>
     <a href="https://www.linkedin.com/in/am14326" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://github.com/mahajanayush28" target="_blank" rel="noopener">GitHub</a>
