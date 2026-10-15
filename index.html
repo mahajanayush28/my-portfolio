@@ -6,89 +6,73 @@
 <title>Ayush Mahajan | Software Engineer - Frontend & Full Stack</title>
 <meta name="description" content="Ayush Mahajan - Software Engineer specialising in React.js, Next.js, React Native, Node.js and PostgreSQL.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0b0c12;
-    --bg-2:#11131b;
-    --card:#161924;
-    --card-hover:#1c2030;
-    --line:#252a3a;
-    --ink:#f2f3f8;
-    --ink-soft:#a3a8bb;
-    --ink-faint:#6c7189;
-    --accent:#7c6cff;
-    --accent-2:#22c1c3;
+    --bg:#0b0c12; --bg-2:#11131b; --card:#161924; --card-hover:#1c2030; --line:#252a3a;
+    --ink:#f2f3f8; --ink-soft:#a3a8bb; --ink-faint:#6c7189;
+    --accent:#7c6cff; --accent-2:#22c1c3; --green:#25d366;
     --grad:linear-gradient(90deg,#7c6cff 0%,#22c1c3 100%);
-    --green:#25d366;
-    --radius:18px;
-    --shadow:0 20px 50px -20px rgba(0,0,0,.6);
+    --radius:18px; --shadow:0 20px 50px -20px rgba(0,0,0,.6);
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;scroll-padding-top:90px;}
   body{
-    font-family:'Inter',system-ui,sans-serif;
+    font-family:'Inter',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
     background:
       radial-gradient(900px 500px at 90% -10%,rgba(124,108,255,.15),transparent 60%),
       radial-gradient(800px 500px at -10% 20%,rgba(34,193,195,.12),transparent 55%),
       var(--bg);
-    color:var(--ink);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
+    color:var(--ink); line-height:1.6; -webkit-font-smoothing:antialiased;
   }
   a{color:inherit;text-decoration:none;}
   img{max-width:100%;display:block;}
+  svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
   .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
   section{padding:72px 0;}
-  .eyebrow{
-    display:inline-flex;align-items:center;gap:8px;
-    font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-    color:var(--accent);margin-bottom:12px;
-  }
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
   .eyebrow::before{content:"";width:18px;height:2px;background:var(--grad);border-radius:2px;}
   h2.title{font-size:30px;font-weight:800;letter-spacing:-.02em;margin-bottom:32px;}
-  .muted{color:var(--ink-soft);}
 
-  /* ---------- HEADER ---------- */
-  header{position:sticky;top:0;z-index:50;padding:14px 0;background:rgba(11,12,18,.7);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
+  /* HEADER */
+  header{position:sticky;top:0;z-index:50;padding:14px 0;background:rgba(11,12,18,.75);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
   .nav{display:flex;align-items:center;justify-content:space-between;}
   .brand{display:flex;align-items:center;gap:10px;font-weight:700;}
-  .brand-mark{width:36px;height:36px;border-radius:10px;background:var(--grad);display:grid;place-items:center;font-weight:800;color:#0b0c12;}
+  .brand img{width:36px;height:36px;border-radius:10px;object-fit:cover;}
   nav.links{display:flex;gap:4px;}
   nav.links a{font-size:13.5px;color:var(--ink-soft);padding:8px 14px;border-radius:100px;transition:.2s;}
   nav.links a:hover{color:var(--ink);background:var(--card);}
-  .btn{
-    display:inline-flex;align-items:center;gap:8px;
-    padding:12px 22px;border-radius:100px;font-size:14px;font-weight:600;
-    border:1px solid transparent;cursor:pointer;transition:.2s;font-family:inherit;
-  }
+
+  /* BUTTONS */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:100px;font-size:14px;font-weight:600;border:1px solid transparent;cursor:pointer;transition:.2s;font-family:inherit;}
   .btn-primary{background:var(--grad);color:#0b0c12;}
   .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 25px -10px rgba(124,108,255,.8);}
   .btn-ghost{background:transparent;border-color:var(--line);color:var(--ink);}
   .btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
   .btn-wa{background:var(--green);color:#06210f;}
   .btn-wa:hover{transform:translateY(-2px);}
+  .btn-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px;}
 
-  /* ---------- HERO ---------- */
+  /* HERO */
   .hero{padding:80px 0 64px;}
   .hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;}
   .hero h1{font-size:54px;font-weight:800;letter-spacing:-.03em;line-height:1.05;margin-bottom:10px;}
-  .hero .role{font-size:24px;font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:18px;}
+  .hero .role{font-size:22px;font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:18px;}
   .hero p.desc{color:var(--ink-soft);max-width:520px;margin-bottom:28px;font-size:16px;}
-  .btn-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px;}
   .meta{display:flex;flex-wrap:wrap;gap:18px;font-size:13.5px;color:var(--ink-soft);}
   .meta span{display:flex;align-items:center;gap:6px;}
-  .hero-card{
-    background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:var(--shadow);
-  }
-  .hero-card .code{font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.9;color:var(--ink-soft);}
-  .hero-card .k{color:#7c6cff}.hero-card .f{color:#f2b263}.hero-card .s{color:#8be28b}.hero-card .c{color:#22c1c3}
+  .meta svg.i{width:16px;height:16px;color:var(--accent-2);}
+  .photo-card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:14px;box-shadow:var(--shadow);max-width:380px;margin:0 auto;}
+  .photo-card img{width:100%;border-radius:20px;aspect-ratio:1/1;object-fit:cover;}
+  .photo-badge{position:absolute;left:-14px;bottom:24px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 16px;box-shadow:var(--shadow);}
+  .photo-badge b{display:block;font-size:22px;font-weight:800;}
+  .photo-badge small{font-size:11.5px;color:var(--ink-faint);}
   .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px;}
   .stat{background:var(--bg-2);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center;}
   .stat .num{font-size:22px;font-weight:800;}
   .stat .lbl{font-size:11.5px;color:var(--ink-faint);}
 
-  /* ---------- ABOUT ---------- */
+  /* ABOUT */
   .about{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
   .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
   .about p{color:var(--ink-soft);margin-bottom:16px;}
@@ -96,14 +80,14 @@
   .strength{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;font-size:14px;color:var(--ink-soft);}
   .strength b{color:var(--ink);display:block;margin-bottom:2px;font-size:14.5px;}
 
-  /* ---------- SKILLS ---------- */
+  /* SKILLS */
   .skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
   .skill-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;}
-  .skill-card h3{font-size:14px;font-weight:700;margin-bottom:14px;color:var(--accent-2);text-transform:uppercase;letter-spacing:.06em;}
+  .skill-card h3{font-size:13px;font-weight:700;margin-bottom:14px;color:var(--accent-2);text-transform:uppercase;letter-spacing:.06em;}
   .chips{display:flex;flex-wrap:wrap;gap:8px;}
   .chip{font-size:12.5px;padding:6px 12px;border-radius:100px;background:var(--bg-2);border:1px solid var(--line);color:var(--ink-soft);}
 
-  /* ---------- EXPERIENCE ---------- */
+  /* EXPERIENCE */
   .timeline{position:relative;padding-left:26px;}
   .timeline::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--line);}
   .job{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;margin-bottom:18px;}
@@ -111,81 +95,74 @@
   .job-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-bottom:12px;}
   .job h3{font-size:17px;font-weight:700;}
   .job .co{color:var(--accent-2);font-weight:600;font-size:14px;}
-  .job .date{font-size:12.5px;color:var(--ink-faint);font-family:'JetBrains Mono',monospace;}
+  .job .date{font-size:12.5px;color:var(--ink-faint);}
   .job ul{padding-left:18px;color:var(--ink-soft);font-size:14px;}
   .job li{margin-bottom:6px;}
 
-  /* ---------- PROJECTS ---------- */
+  /* PROJECTS */
   .project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
   .project{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;transition:.25s;}
   .project:hover{transform:translateY(-4px);border-color:var(--accent);background:var(--card-hover);}
   .project-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
-  .project-icon{width:42px;height:42px;border-radius:12px;background:var(--bg-2);display:grid;place-items:center;font-size:20px;}
+  .project-icon{width:42px;height:42px;border-radius:12px;background:var(--bg-2);display:grid;place-items:center;font-weight:800;color:var(--accent-2);font-size:14px;}
   .tag{font-size:11px;font-weight:600;padding:4px 10px;border-radius:100px;background:rgba(34,193,195,.12);color:var(--accent-2);}
   .tag.wip{background:rgba(124,108,255,.15);color:#a79bff;}
   .project h3{font-size:16px;font-weight:700;margin-bottom:8px;}
   .project p{font-size:13.5px;color:var(--ink-soft);margin-bottom:16px;flex-grow:1;}
-  .project .stack{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--ink-faint);margin-bottom:14px;}
+  .project .stack{font-size:12px;color:var(--ink-faint);}
 
-  /* ---------- EDUCATION ---------- */
+  /* EDUCATION */
   .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
   .edu{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;}
   .edu h3{font-size:15.5px;font-weight:700;margin-bottom:4px;}
   .edu .sub{font-size:13.5px;color:var(--ink-soft);}
-  .edu .yr{font-size:12px;color:var(--ink-faint);font-family:'JetBrains Mono',monospace;margin-top:8px;}
+  .edu .yr{font-size:12px;color:var(--ink-faint);margin-top:8px;}
   .cert{margin-top:20px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 24px;display:flex;align-items:center;gap:12px;font-size:14px;}
+  .cert svg.i{color:var(--accent);}
 
-  /* ---------- CONTACT ---------- */
+  /* CONTACT */
   .contact{background:var(--bg-2);border-top:1px solid var(--line);}
   .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:start;}
   .contact-info h2{font-size:30px;font-weight:800;letter-spacing:-.02em;margin-bottom:14px;}
   .contact-info > p{color:var(--ink-soft);margin-bottom:28px;}
   .contact-item{display:flex;align-items:center;gap:14px;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:12px;transition:.2s;}
   .contact-item:hover{border-color:var(--accent);}
-  .ci-icon{width:40px;height:40px;border-radius:10px;background:var(--bg-2);display:grid;place-items:center;font-size:18px;flex-shrink:0;}
+  .ci-icon{width:40px;height:40px;border-radius:10px;background:var(--bg-2);display:grid;place-items:center;flex-shrink:0;color:var(--accent-2);}
   .contact-item small{display:block;font-size:11.5px;color:var(--ink-faint);}
   .contact-item span{font-size:14.5px;font-weight:600;}
   .form{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:32px;box-shadow:var(--shadow);}
   .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+  .form-row.full{grid-template-columns:1fr;}
   .form label{display:block;font-size:12.5px;color:var(--ink-soft);margin-bottom:6px;font-weight:500;}
-  .form input,.form select,.form textarea{
-    width:100%;background:var(--bg-2);border:1px solid var(--line);border-radius:12px;
-    padding:12px 14px;color:var(--ink);font-family:inherit;font-size:14px;outline:none;transition:.2s;
-  }
+  .form input,.form select,.form textarea{width:100%;background:var(--bg-2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;color:var(--ink);font-family:inherit;font-size:14px;outline:none;transition:.2s;}
   .form input:focus,.form select:focus,.form textarea:focus{border-color:var(--accent);}
   .form textarea{resize:vertical;min-height:110px;}
   .form select option{background:var(--card);}
   .form-buttons{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px;}
-  .form-buttons .btn{justify-content:center;}
   .form .hint{font-size:12px;color:var(--ink-faint);margin-top:12px;text-align:center;}
 
-  /* ---------- FLOATING WHATSAPP ---------- */
-  .wa-float{
-    position:fixed;right:22px;bottom:22px;z-index:60;
-    width:58px;height:58px;border-radius:50%;background:var(--green);
-    display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.7);transition:.2s;
-  }
+  /* FLOATING WHATSAPP */
+  .wa-float{position:fixed;right:22px;bottom:22px;z-index:60;width:58px;height:58px;border-radius:50%;background:var(--green);color:#06210f;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.7);transition:.2s;}
   .wa-float:hover{transform:scale(1.08);}
-  .wa-float svg{width:30px;height:30px;fill:#06210f;}
-  .wa-float::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--green);opacity:.5;animation:pulse 2s infinite;}
-  @keyframes pulse{0%{transform:scale(.9);opacity:.6}100%{transform:scale(1.25);opacity:0}}
+  .wa-float svg{width:30px;height:30px;fill:currentColor;stroke:none;}
 
   footer{padding:28px 0 36px;text-align:center;font-size:13px;color:var(--ink-faint);border-top:1px solid var(--line);}
-  footer .socials{display:flex;justify-content:center;gap:14px;margin-bottom:12px;}
-  footer .socials a{color:var(--ink-soft);font-size:13px;}
+  footer .socials{display:flex;justify-content:center;gap:18px;margin-bottom:12px;flex-wrap:wrap;}
+  footer .socials a{color:var(--ink-soft);}
   footer .socials a:hover{color:var(--accent);}
 
-  /* ---------- RESPONSIVE ---------- */
+  /* RESPONSIVE */
   @media (max-width:980px){
     nav.links{display:none;}
     .hero-grid,.about-grid,.contact-grid,.edu-grid{grid-template-columns:1fr;}
     .project-grid{grid-template-columns:repeat(2,1fr);}
     .hero h1{font-size:40px;}
+    .photo-badge{left:12px;}
   }
   @media (max-width:640px){
     section{padding:52px 0;}
     .project-grid,.skill-grid,.form-row,.form-buttons{grid-template-columns:1fr;}
-    .stats{grid-template-columns:1fr 1fr 1fr;}
+    .stats{grid-template-columns:repeat(3,1fr);}
     h2.title,.contact-info h2{font-size:24px;}
     .hero{padding-top:48px;}
     .form{padding:22px;}
@@ -194,10 +171,23 @@
 </head>
 <body>
 
+<!-- Icon sprite (SVG, no emoji needed) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 10v7"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4 1.3-4-2-6-2m12 4v-3.5c0-1 .1-1.4-.6-2 2.8-.3 5.6-1.4 5.6-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.7 11.7 0 0 0-6 0C6.8 2.2 5.8 2.5 5.8 2.5a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.4 8.9c0 4.6 2.8 5.7 5.6 6-.6.6-.6 1.2-.6 2V21"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.6a11.9 11.9 0 0 0 5.7 1.5c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.1-3.4-8.5zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.9 9.9 0 0 1-1.5-5.2C2.2 6.4 6.5 2.1 12 2.1c2.6 0 5.1 1 7 2.9a9.8 9.8 0 0 1 2.9 7c0 5.5-4.4 9.8-9.9 9.8zm5.4-7.3c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.2 14L7 22l5-3 5 3-1.2-8"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></symbol>
+</svg>
+
 <header>
   <div class="wrap nav">
     <a href="#home" class="brand">
-      <div class="brand-mark">AM</div>
+      <img src="photo.png" alt="Ayush Mahajan">
       <span>Ayush Mahajan</span>
     </a>
     <nav class="links">
@@ -220,33 +210,32 @@
       <div>
         <div class="eyebrow">Hello, I'm</div>
         <h1>Ayush Mahajan</h1>
-        <div class="role">Software Engineer | Frontend & Full Stack</div>
+        <div class="role">Software Engineer | Frontend &amp; Full Stack</div>
         <p class="desc">I build reliable, scalable web and mobile applications, from database design and REST APIs to responsive, pixel-perfect interfaces. Currently working remotely with Meron.</p>
         <div class="btn-row">
           <a href="#projects" class="btn btn-primary">View My Work</a>
-          <a href="Ayush_Mahajan_Resume.pdf" class="btn btn-ghost" download>Download Resume</a>
+          <a href="Ayush_Mahajan_Resume.pdf" class="btn btn-ghost" download>
+            <svg class="i"><use href="#i-download"/></svg> Download Resume
+          </a>
         </div>
         <div class="meta">
-          <span>?? Pune, Maharashtra, India</span>
-          <span>?? mahajanayush321@gmail.com</span>
-          <span>?? +91 9039898453</span>
+          <span><svg class="i"><use href="#i-pin"/></svg> Pune, Maharashtra, India</span>
+          <span><svg class="i"><use href="#i-mail"/></svg> mahajanayush321@gmail.com</span>
+          <span><svg class="i"><use href="#i-phone"/></svg> +91 90398 98453</span>
         </div>
       </div>
 
-      <div class="hero-card">
-        <div class="code">
-          <div><span class="k">const</span> <span>developer</span> = {</div>
-          <div>&nbsp;&nbsp;<span class="f">name</span>: <span class="s">"Ayush Mahajan"</span>,</div>
-          <div>&nbsp;&nbsp;<span class="f">role</span>: <span class="s">"Software Engineer"</span>,</div>
-          <div>&nbsp;&nbsp;<span class="f">frontend</span>: [<span class="s">"React"</span>, <span class="s">"Next.js"</span>, <span class="s">"React Native"</span>],</div>
-          <div>&nbsp;&nbsp;<span class="f">backend</span>: [<span class="s">"Node.js"</span>, <span class="s">"Express.js"</span>],</div>
-          <div>&nbsp;&nbsp;<span class="f">database</span>: [<span class="s">"PostgreSQL"</span>, <span class="s">"MongoDB"</span>, <span class="s">"MySQL"</span>],</div>
-          <div>&nbsp;&nbsp;<span class="f">openToWork</span>: <span class="c">true</span>,</div>
-          <div>};</div>
+      <div>
+        <div class="photo-card">
+          <img src="photo.png" alt="Ayush Mahajan">
+          <div class="photo-badge">
+            <b>4+</b>
+            <small>Years of experience</small>
+          </div>
         </div>
         <div class="stats">
-          <div class="stat"><div class="num">4+</div><div class="lbl">Years Exp.</div></div>
           <div class="stat"><div class="num">3</div><div class="lbl">Companies</div></div>
+          <div class="stat"><div class="num">B.E.</div><div class="lbl">Engineering</div></div>
           <div class="stat"><div class="num">E2E</div><div class="lbl">Playwright</div></div>
         </div>
       </div>
@@ -265,9 +254,9 @@
       </div>
       <div class="strengths">
         <div class="strength"><b>Reusable Architecture</b>Component libraries and configurable dynamic form builders that speed up delivery across projects.</div>
-        <div class="strength"><b>Security & Access</b>Authentication, authorization and role-based access control (RBAC) implementations.</div>
+        <div class="strength"><b>Security &amp; Access</b>Authentication, authorization and role-based access control (RBAC) implementations.</div>
         <div class="strength"><b>Design to Code</b>Figma designs converted into responsive, accessible, cross-browser interfaces.</div>
-        <div class="strength"><b>Quality & Testing</b>Playwright automation for end-to-end coverage, plus debugging and performance optimisation.</div>
+        <div class="strength"><b>Quality &amp; Testing</b>Playwright automation for end-to-end coverage, plus debugging and performance optimisation.</div>
       </div>
     </div>
   </section>
@@ -287,14 +276,14 @@
           </div>
         </div>
         <div class="skill-card">
-          <h3>Backend & Databases</h3>
+          <h3>Backend &amp; Databases</h3>
           <div class="chips">
             <span class="chip">Node.js</span><span class="chip">Express.js</span><span class="chip">REST APIs</span>
             <span class="chip">PostgreSQL</span><span class="chip">MongoDB</span><span class="chip">MySQL</span><span class="chip">Oracle DB</span>
           </div>
         </div>
         <div class="skill-card">
-          <h3>Testing & Tools</h3>
+          <h3>Testing &amp; Tools</h3>
           <div class="chips">
             <span class="chip">Playwright</span><span class="chip">Git</span><span class="chip">GitHub</span>
             <span class="chip">Postman</span><span class="chip">VS Code</span><span class="chip">Figma</span>
@@ -320,7 +309,7 @@
         <div class="job">
           <div class="job-head">
             <div><h3>Software Engineer</h3><div class="co">Meron</div></div>
-            <div class="date">Apr 2025 - Present · Remote</div>
+            <div class="date">Apr 2025 - Present 路 Remote</div>
           </div>
           <ul>
             <li>Developed scalable front-end applications using React.js, Redux and modular architecture principles.</li>
@@ -335,7 +324,7 @@
         <div class="job">
           <div class="job-head">
             <div><h3>Software Engineer</h3><div class="co">Vector Flow</div></div>
-            <div class="date">Jan 2023 - Mar 2025 · Remote</div>
+            <div class="date">Jan 2023 - Mar 2025 路 Remote</div>
           </div>
           <ul>
             <li>Developed high-performance web applications using React.js and Redux with reusable component libraries.</li>
@@ -349,7 +338,7 @@
         <div class="job">
           <div class="job-head">
             <div><h3>Software Engineer</h3><div class="co">Techno Start</div></div>
-            <div class="date">Sep 2020 - Oct 2021 · Pune, India</div>
+            <div class="date">Sep 2020 - Oct 2021 路 Pune, India</div>
           </div>
           <ul>
             <li>Designed and implemented application features based on business requirements and user needs.</li>
@@ -370,63 +359,45 @@
       <div class="project-grid">
 
         <div class="project">
-          <div class="project-top">
-            <div class="project-icon">??</div>
-            <span class="tag wip">In Progress</span>
-          </div>
+          <div class="project-top"><div class="project-icon">EX</div><span class="tag wip">In Progress</span></div>
           <h3>ExpenseTracker</h3>
           <p>Personal finance management app to track income and expenses, manage categories and budgets, and review financial activity, with an AI Assistant for smarter insights.</p>
-          <div class="stack">React.js · Next.js · Node.js · Express.js · PostgreSQL · Material UI</div>
+          <div class="stack">React.js 路 Next.js 路 Node.js 路 Express.js 路 PostgreSQL 路 Material UI</div>
         </div>
 
         <div class="project">
-          <div class="project-top">
-            <div class="project-icon">??</div>
-            <span class="tag">PG-DAC Final</span>
-          </div>
+          <div class="project-top"><div class="project-icon">HM</div><span class="tag">PG-DAC Final</span></div>
           <h3>Hospital Management System</h3>
           <p>Streamlines healthcare administration: patient records, appointments, billing, inventory and pharmacy, with role-based access control and reporting modules.</p>
-          <div class="stack">MongoDB · Express.js · React.js · Node.js</div>
+          <div class="stack">MongoDB 路 Express.js 路 React.js 路 Node.js</div>
         </div>
 
         <div class="project">
-          <div class="project-top">
-            <div class="project-icon">??</div>
-            <span class="tag">Sample</span>
-          </div>
+          <div class="project-top"><div class="project-icon">DF</div><span class="tag">Sample</span></div>
           <h3>Dynamic Form Builder</h3>
           <p>Drag-and-drop form builder that generates configurable forms from JSON schemas, with validation and reusable field components.</p>
-          <div class="stack">React.js · Redux · Material UI</div>
+          <div class="stack">React.js 路 Redux 路 Material UI</div>
         </div>
 
         <div class="project">
-          <div class="project-top">
-            <div class="project-icon">??</div>
-            <span class="tag">Sample</span>
-          </div>
+          <div class="project-top"><div class="project-icon">AD</div><span class="tag">Sample</span></div>
           <h3>Analytics Dashboard</h3>
           <p>Responsive admin dashboard with interactive charts, filters and role-based views, consuming REST APIs for real-time data.</p>
-          <div class="stack">Next.js · Node.js · PostgreSQL</div>
+          <div class="stack">Next.js 路 Node.js 路 PostgreSQL</div>
         </div>
 
         <div class="project">
-          <div class="project-top">
-            <div class="project-icon">??</div>
-            <span class="tag">Sample</span>
-          </div>
+          <div class="project-top"><div class="project-icon">MT</div><span class="tag">Sample</span></div>
           <h3>Mobile Task Manager</h3>
           <p>Cross-platform task management app with offline-friendly lists, reminders and clean, reusable component architecture.</p>
-          <div class="stack">React Native · Redux · Node.js</div>
+          <div class="stack">React Native 路 Redux 路 Node.js</div>
         </div>
 
         <div class="project">
-          <div class="project-top">
-            <div class="project-icon">??</div>
-            <span class="tag">Sample</span>
-          </div>
+          <div class="project-top"><div class="project-icon">EC</div><span class="tag">Sample</span></div>
           <h3>E-Commerce Storefront</h3>
           <p>Responsive online store with product listing, cart, authentication and Playwright end-to-end tests for checkout flows.</p>
-          <div class="stack">React.js · Express.js · MongoDB · Playwright</div>
+          <div class="stack">React.js 路 Express.js 路 MongoDB 路 Playwright</div>
         </div>
 
       </div>
@@ -437,7 +408,7 @@
   <section id="education" style="padding-top:0">
     <div class="wrap">
       <div class="eyebrow">Education</div>
-      <h2 class="title">Education & Certifications</h2>
+      <h2 class="title">Education &amp; Certifications</h2>
       <div class="edu-grid">
         <div class="edu">
           <h3>PG-DAC: Post Graduate Diploma in Advanced Computing</h3>
@@ -450,7 +421,7 @@
           <div class="yr">2014 - 2019</div>
         </div>
       </div>
-      <div class="cert">?? <span><strong>Certification:</strong> PG-DAC (Advanced Computing), CDAC</span></div>
+      <div class="cert"><svg class="i"><use href="#i-award"/></svg><span><strong>Certification:</strong> PG-DAC (Advanced Computing), CDAC</span></div>
     </div>
   </section>
 
@@ -463,27 +434,27 @@
         <p>Reach out by email or WhatsApp. Fill in the form and your message will open in Gmail or WhatsApp, ready to send.</p>
 
         <a class="contact-item" href="https://mail.google.com/mail/?view=cm&fs=1&to=mahajanayush321@gmail.com" target="_blank" rel="noopener">
-          <div class="ci-icon">??</div>
+          <div class="ci-icon"><svg class="i"><use href="#i-mail"/></svg></div>
           <div><small>Email (opens Gmail)</small><span>mahajanayush321@gmail.com</span></div>
         </a>
         <a class="contact-item" href="https://wa.me/919039898453" target="_blank" rel="noopener">
-          <div class="ci-icon">??</div>
+          <div class="ci-icon"><svg class="i"><use href="#i-wa"/></svg></div>
           <div><small>WhatsApp</small><span>+91 90398 98453</span></div>
         </a>
         <a class="contact-item" href="tel:+919039898453">
-          <div class="ci-icon">??</div>
+          <div class="ci-icon"><svg class="i"><use href="#i-phone"/></svg></div>
           <div><small>Phone</small><span>+91 90398 98453</span></div>
         </a>
         <a class="contact-item" href="https://www.linkedin.com/in/am14326" target="_blank" rel="noopener">
-          <div class="ci-icon">in</div>
+          <div class="ci-icon"><svg class="i"><use href="#i-linkedin"/></svg></div>
           <div><small>LinkedIn</small><span>linkedin.com/in/am14326</span></div>
         </a>
         <a class="contact-item" href="https://github.com/mahajanayush28" target="_blank" rel="noopener">
-          <div class="ci-icon">?</div>
+          <div class="ci-icon"><svg class="i"><use href="#i-github"/></svg></div>
           <div><small>GitHub</small><span>github.com/mahajanayush28</span></div>
         </a>
         <div class="contact-item">
-          <div class="ci-icon">??</div>
+          <div class="ci-icon"><svg class="i"><use href="#i-pin"/></svg></div>
           <div><small>Location</small><span>Pune, Maharashtra, India</span></div>
         </div>
       </div>
@@ -499,7 +470,7 @@
             <input type="email" id="email" required placeholder="you@example.com">
           </div>
         </div>
-        <div class="form-row" style="grid-template-columns:1fr">
+        <div class="form-row full">
           <div>
             <label for="type">Project Type</label>
             <select id="type">
@@ -512,15 +483,15 @@
             </select>
           </div>
         </div>
-        <div class="form-row" style="grid-template-columns:1fr">
+        <div class="form-row full">
           <div>
             <label for="message">Message</label>
             <textarea id="message" required placeholder="Tell me about your project or opportunity..."></textarea>
           </div>
         </div>
         <div class="form-buttons">
-          <button type="submit" class="btn btn-primary">Send via Gmail ??</button>
-          <button type="button" class="btn btn-wa" id="waBtn">Send via WhatsApp ??</button>
+          <button type="submit" class="btn btn-primary"><svg class="i"><use href="#i-send"/></svg> Send via Gmail</button>
+          <button type="button" class="btn btn-wa" id="waBtn"><svg class="i"><use href="#i-wa"/></svg> Send via WhatsApp</button>
         </div>
         <p class="hint">Gmail opens in a new tab with your message ready to send</p>
       </form>
@@ -529,9 +500,8 @@
 
 </main>
 
-<!-- Floating WhatsApp button -->
 <a class="wa-float" href="https://wa.me/919039898453?text=Hi%20Ayush%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.6a11.9 11.9 0 0 0 5.7 1.5c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.1-3.4-8.5zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.9 9.9 0 0 1-1.5-5.2C2.2 6.4 6.5 2.1 12 2.1c2.6 0 5.1 1 7 2.9a9.8 9.8 0 0 1 2.9 7c0 5.5-4.4 9.8-9.9 9.8zm5.4-7.3c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"/></svg>
+  <svg viewBox="0 0 24 24"><use href="#i-wa"/></svg>
 </a>
 
 <footer>
@@ -541,7 +511,7 @@
     <a href="https://www.linkedin.com/in/am14326" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://github.com/mahajanayush28" target="_blank" rel="noopener">GitHub</a>
   </div>
-  ? <span id="year"></span> Ayush Mahajan. All rights reserved.
+  漏 <span id="year"></span> Ayush Mahajan. All rights reserved.
 </footer>
 
 <script>
@@ -549,40 +519,28 @@
 
   const OWNER_EMAIL = 'mahajanayush321@gmail.com';
   const OWNER_WA = '919039898453';
-
   const form = document.getElementById('contactForm');
 
-  // Build a message from the form fields
   function buildMessage() {
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const type = document.getElementById('type').value;
     const message = document.getElementById('message').value.trim();
-    return {
-      name, email, type, message,
-      text: `Name: ${name}\nEmail: ${email}\nProject Type: ${type}\n\n${message}`
-    };
+    return { name, email, type, message,
+      text: `Name: ${name}\nEmail: ${email}\nProject Type: ${type}\n\n${message}` };
   }
 
-  // Gmail: opens the compose window addressed to you, with the message filled in
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const m = buildMessage();
     const subject = encodeURIComponent(`Portfolio Enquiry: ${m.type} from ${m.name}`);
     const body = encodeURIComponent(m.text);
-    window.open(
-      `https://mail.google.com/mail/?view=cm&fs=1&to=${OWNER_EMAIL}&su=${subject}&body=${body}`,
-      '_blank',
-      'noopener'
-    );
+    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${OWNER_EMAIL}&su=${subject}&body=${body}`, '_blank', 'noopener');
   });
 
-  // WhatsApp: opens a chat with you with the message prefilled
   document.getElementById('waBtn').addEventListener('click', () => {
     const m = buildMessage();
-    const text = encodeURIComponent(
-      `Hi Ayush, I'm ${m.name} (${m.email}).\nProject Type: ${m.type}\n\n${m.message}`
-    );
+    const text = encodeURIComponent(`Hi Ayush, I'm ${m.name} (${m.email}).\nProject Type: ${m.type}\n\n${m.message}`);
     window.open(`https://wa.me/${OWNER_WA}?text=${text}`, '_blank', 'noopener');
   });
 </script>
