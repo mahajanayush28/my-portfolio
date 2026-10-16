@@ -28,6 +28,7 @@
   a{color:inherit;text-decoration:none;}
   img{max-width:100%;display:block;}
   svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
+  svg.i.wa-ic{fill:currentColor;stroke:none;}
   .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
   section{padding:72px 0;}
   .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
@@ -51,7 +52,6 @@
   .btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
   .btn-wa{background:var(--green);color:#06210f;}
   .btn-wa:hover{transform:translateY(-2px);}
-  .btn-wa svg.i{fill:currentColor;stroke:none;}
   .btn-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px;}
 
   /* HERO */
@@ -65,9 +65,6 @@
   .meta svg.i{width:16px;height:16px;color:var(--accent-2);}
   .photo-card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:14px;box-shadow:var(--shadow);max-width:380px;margin:0 auto;}
   .photo-card img{width:100%;border-radius:20px;aspect-ratio:1/1;object-fit:cover;}
-  .photo-badge{position:absolute;left:-14px;bottom:24px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 16px;box-shadow:var(--shadow);}
-  .photo-badge b{display:block;font-size:22px;font-weight:800;}
-  .photo-badge small{font-size:11.5px;color:var(--ink-faint);}
   .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px;}
   .stat{background:var(--bg-2);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center;}
   .stat .num{font-size:22px;font-weight:800;}
@@ -129,7 +126,6 @@
   .contact-item{display:flex;align-items:center;gap:14px;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:12px;transition:.2s;}
   .contact-item:hover{border-color:var(--accent);}
   .ci-icon{width:40px;height:40px;border-radius:10px;background:var(--bg-2);display:grid;place-items:center;flex-shrink:0;color:var(--accent-2);}
-  .ci-icon svg.i{fill:currentColor;stroke:none;}
   .contact-item small{display:block;font-size:11.5px;color:var(--ink-faint);}
   .contact-item span{font-size:14.5px;font-weight:600;}
   .form{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:32px;box-shadow:var(--shadow);}
@@ -144,7 +140,7 @@
   .form .hint{font-size:12px;color:var(--ink-faint);margin-top:12px;text-align:center;}
 
   /* FLOATING WHATSAPP */
-   .wa-float{position:fixed;right:22px;bottom:22px;z-index:60;width:58px;height:58px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.7);transition:.2s;}
+  .wa-float{position:fixed;right:22px;bottom:22px;z-index:60;width:58px;height:58px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.7);transition:.2s;}
   .wa-float:hover{transform:scale(1.08);}
   .wa-float svg{width:30px;height:30px;fill:currentColor;stroke:none;}
 
@@ -159,7 +155,6 @@
     .hero-grid,.about-grid,.contact-grid,.edu-grid{grid-template-columns:1fr;}
     .project-grid{grid-template-columns:repeat(2,1fr);}
     .hero h1{font-size:40px;}
-    .photo-badge{left:12px;}
   }
   @media (max-width:640px){
     section{padding:52px 0;}
@@ -232,9 +227,9 @@
           <img src="photo.png" alt="Ayush Mahajan">
         </div>
         <div class="stats">
-		  <div class="stat"><div class="num">4+</div><div class="lbl">Years of experience</div></div>
+          <div class="stat"><div class="num">4+</div><div class="lbl">Years of experience</div></div>
           <div class="stat"><div class="num">3</div><div class="lbl">Companies</div></div>
-          <div class="stat"><div class="num">E2E</div><div class="lbl">Playwright</div></div>
+          <div class="stat"><div class="num">E2E</div><div class="lbl">React</div></div>
         </div>
       </div>
     </div>
@@ -248,7 +243,7 @@
         <h2 class="title">Engineering with clarity, building with purpose.</h2>
         <p>Software Engineer with 4+ years of experience developing web and mobile applications using React.js, Next.js, React Native, JavaScript, Redux and Node.js.</p>
         <p>I have built reusable UI components and configurable dynamic form builders, implemented RBAC and authentication systems, integrated REST APIs, and written Playwright end-to-end tests. I work well in remote, Agile teams.</p>
-        <p>Currently building <strong>ExpenseTracker</strong>, a personal finance app with an AI Assistant, and getting hands-on with TypeScript.</p>
+        <p>Currently building <strong>Expense Tracker</strong>, a personal finance app with an AI Assistant, and getting hands-on with TypeScript.</p>
       </div>
       <div class="strengths">
         <div class="strength"><b>Reusable Architecture</b>Component libraries and configurable dynamic form builders that speed up delivery across projects.</div>
@@ -360,21 +355,21 @@
           <div class="project-top"><div class="project-icon">EXT</div><span class="tag wip">In Progress</span></div>
           <h3>Expense Tracker</h3>
           <p>Personal finance management app to track income and expenses, manage categories and budgets, and review financial activity, with an AI Assistant for smarter insights.</p>
-          <div class="stack">React.js &middot;  Next.js &middot;  Node.js &middot;  Express.js &middot;  PostgreSQL &middot;  Material UI</div>
+          <div class="stack">React.js &middot; Next.js &middot; Node.js &middot; Express.js &middot; PostgreSQL &middot; Material UI</div>
         </a>
 
         <a class="project" href="https://github.com/mahajanayush28/cdac-project" target="_blank" rel="noopener">
           <div class="project-top"><div class="project-icon">HMS</div><span class="tag">PG-DAC Final</span></div>
           <h3>Hospital Management System</h3>
           <p>Streamlines healthcare administration: patient records, appointments, billing, inventory and pharmacy, with role-based access control and reporting modules.</p>
-          <div class="stack">MongoDB &middot;  Express.js &middot;  React.js &middot;  Node.js</div>
+          <div class="stack">MongoDB &middot; Express.js &middot; React.js &middot; Node.js</div>
         </a>
-		
+
         <div class="project">
-          <div class="project-top"><div class="project-icon">DFB</div><span class="tag"></span></div>
+          <div class="project-top"><div class="project-icon">DFB</div><span class="tag">Sample</span></div>
           <h3>Dynamic Form Builder</h3>
           <p>Drag-and-drop form builder that generates configurable forms from JSON schemas, with validation and reusable field components.</p>
-          <div class="stack">React.js &middot;  Redux &middot;  Material UI</div>
+          <div class="stack">React.js &middot; Redux &middot; Material UI</div>
         </div>
 
       </div>
@@ -390,12 +385,12 @@
         <div class="edu">
           <h3>PG-DAC: Post Graduate Diploma in Advanced Computing</h3>
           <div class="sub">CDAC Bangalore</div>
-          <div class="yr">2021 - 2022</div>
+          <div class="yr">Mar 2022 - Sep 2022</div>
         </div>
         <div class="edu">
           <h3>Bachelor of Engineering (B.E.)</h3>
           <div class="sub">RGPV University, Bhopal</div>
-          <div class="yr">2014 - 2019</div>
+          <div class="yr">Jun 2014 - Jun 2019</div>
         </div>
       </div>
       <div class="cert"><svg class="i"><use href="#i-award"/></svg><span><strong>Certification:</strong> PG-DAC (Advanced Computing), CDAC</span></div>
@@ -415,7 +410,7 @@
           <div><small>Email</small><span>mahajanayush321@gmail.com</span></div>
         </a>
         <a class="contact-item" href="https://wa.me/919039898453" target="_blank" rel="noopener">
-          <div class="ci-icon"><svg class="i"><use href="#i-wa"/></svg></div>
+          <div class="ci-icon"><svg class="i wa-ic"><use href="#i-wa"/></svg></div>
           <div><small>WhatsApp</small><span>+91 90398 98453</span></div>
         </a>
         <a class="contact-item" href="tel:+919039898453">
@@ -468,7 +463,7 @@
         </div>
         <div class="form-buttons">
           <button type="submit" class="btn btn-primary"><svg class="i"><use href="#i-send"/></svg> Send via Gmail</button>
-          <button type="button" class="btn btn-wa" id="waBtn"><svg class="i"><use href="#i-wa"/></svg> Send via WhatsApp</button>
+          <button type="button" class="btn btn-wa" id="waBtn"><svg class="i wa-ic"><use href="#i-wa"/></svg> Send via WhatsApp</button>
         </div>
         <p class="hint">Gmail opens in a new tab with your message ready to send</p>
       </form>
